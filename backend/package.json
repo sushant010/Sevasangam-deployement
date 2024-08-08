@@ -7,10 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm start --prefix ./client",
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "dev2": "concurrently \"npm run client\" \"npm run server\"",
-    "dev": "nodemon core/start.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",

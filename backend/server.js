@@ -71,6 +71,11 @@ app.get('/api/v1/health', (req, res) => {
     res.status(200).send('OK');
 });
 
+app.get('/', (req, res) => {
+    res.send('Server Running Successfully');
+});
+
+
 app.use('/api/v1/auth', authRoute)
 
 app.use('/api/v1/temple', templeRoute);
