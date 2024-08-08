@@ -1,0 +1,349 @@
+#searchTempleToDonate > h2 {
+  position: relative;
+  z-index: 3;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 0.5px;
+  font-size: 40px;
+  text-shadow: 1px 1px 1px white;
+}
+&:before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  /* border-radius: 50px; */
+}
+
+.numbers > div > div:nth-of-type(1) {
+  flex: 1;
+}
+.numbers > div > div:nth-of-type(2) {
+  flex-basis: 70%;
+}
+.numbers > div > div:nth-of-type(1) {
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: end;
+  padding: 1rem;
+  & div {
+    min-width: 40%;
+    flex: 1;
+  }
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.card {
+  /* width: 260px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  flex: 1;
+  margin: 15px; */
+  min-height: 360px;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px; /* Adjust height as needed */
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  font-size: 14px;
+  color: #666;
+}
+
+.review-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+}
+.top {
+  grid-row: 1;
+}
+.bottom {
+  grid-row: 2;
+}
+
+.review-heading {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  height: fit-content;
+}
+
+.review,
+.review-heading {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  padding: 1rem;
+}
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.review-heading {
+  box-shadow: none;
+  border: none;
+  text-align: center;
+  min-width: 40%;
+  margin: auto;
+}
+.review-text {
+  margin-bottom: 1rem;
+}
+.review img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+.review-author {
+  display: flex;
+  /* align */
+}
+.review-author > div {
+  display: flex;
+  flex-direction: column;
+}
+.review-author span:nth-of-type(2n) {
+  font-weight: 500;
+  color: var(--color-grey-light-2);
+}
+
+.search-section {
+  position: relative;
+}
+.search-section .search-bar-wrapper {
+  max-width: 600px;
+  margin: auto;
+}
+.search-section .listing-container {
+  padding: 0 3rem;
+}
+.search-section .search-bar-wrapper .searchbar-container {
+  border: 1px solid var(--color-theme-primary);
+}
+.search-section .listing-content p {
+  color: var(--color-grey-dark);
+}
+.search-section .box {
+  position: absolute;
+  width: 90vw;
+  height: 452px;
+  z-index: -1;
+  background-color: var(--color-theme-accent);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50px;
+  top: 20%;
+}
+
+.tab-btns-container {
+  max-width: 25%;
+  & .btn:first-of-type {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-right: 1px solid #fff !important;
+  }
+  & .btn:nth-of-type(2) {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .search-section .box {
+    height: 750px;
+  }
+
+  .review-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .review-heading {
+    order: -1;
+  }
+
+  .review-container {
+    margin: 0;
+  }
+  .review-heading {
+    margin: 0;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 950px) {
+  .search-section .box {
+    height: 1051px;
+    top: 9%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .search-section .search-bar-wrapper {
+    max-width: 93%;
+  }
+  section#searchTempleToDonate {
+    margin-top: 0px !important;
+    & > h2 {
+      font-size: 24px;
+    }
+  }
+
+  .tab-btns-container {
+    max-width: fit-content;
+  }
+  .listing,
+  .review {
+    width: 100%;
+    flex: auto;
+  }
+  .listing {
+    min-width: 200px;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 8px 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-color: #eee;
+    background-color: #fff;
+  }
+  .hero-section {
+    padding: 2rem 1rem;
+    min-height: 400px;
+  }
+  .hero-section:after {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    );
+  }
+  .hero-section-text {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+  .hero-section > div {
+    justify-content: center;
+    align-items: center;
+  }
+  .numbers > div > div:nth-of-type(1) {
+    flex-direction: row;
+    & .text-heading {
+      font-size: 1.2rem;
+    }
+  }
+
+  .numbers > div > div:nth-of-type(2) {
+    flex-basis: 100%;
+  }
+
+  .search-section .box {
+    height: 95%;
+    top: 40px;
+    border-radius: 22px;
+  }
+
+  .tab-btns {
+    padding: 4px 10px;
+    flex: none !important;
+  }
+  .card-container {
+    flex-direction: column;
+  }
+  .search-section .listing-container {
+    padding: 0 6px;
+  }
+
+  .capsuleContainer > .capsule {
+    max-width: 100%;
+  }
+}
+
+.capsuleContainer {
+  padding: 10px;
+  width: 100%;
+}
+.capsuleContainer > .capsule {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  /* gap: 10px; */
+  border: 1px solid black;
+  padding: 4px 10px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  width: 400px;
+  background-color: white;
+}
+
+.capsuleContainer > .capsule > .capsuleBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--color-theme-primary);
+  z-index: -1;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+}
+
+.capsuleContainer > .capsule > .right {
+  /* right: 0; */
+  left: 50%;
+}
+
+.capsuleContainer > .capsule > button {
+  width: 50%;
+  /* filter: invert(1);
+  mix-blend-mode: difference; */
+  color: black;
+}
+
+.capsuleContainer > .capsule > .active {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .card-content {
+    padding: 10px;
+  }
+}
